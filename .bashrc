@@ -47,3 +47,12 @@ alias SLEEP=sleep
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+function cinnamon() {
+    rm ~/.xinitrc
+    startx
+}
+function xmonad() {
+    rm ~/.xinitrc
+    ln -s ~/dotfiles/xmonad.rc ~/.xinitrc
+    startx
+}

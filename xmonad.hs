@@ -11,6 +11,7 @@ import XMonad.Prompt.Ssh
 import System.IO
 import XMonad.Actions.CycleWS
 
+setDefaultCursor xC_left_ptr
  
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
@@ -32,9 +33,9 @@ customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders F
       delta = 3/100
 
 main = do
-    xmproc <- spawnPipe "xscreensaver -nosplash"
-    xmproc <- spawnPipe "nautilus -n &"
-    xmproc <- spawnPipe "~/.killxmobar.sh; ~/.cabal/bin/xmobar ~/.xmobarrc"
+    {-xmproc <- spawnPipe "xscreensaver -nosplash"-}
+    {-xmproc <- spawnPipe "nautilus -n &"-}
+    {-xmproc <- spawnPipe "~/.killxmobar.sh; ~/.cabal/bin/xmobar ~/.xmobarrc"-}
 
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
