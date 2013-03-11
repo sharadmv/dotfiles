@@ -1,2 +1,8 @@
-exec xmonad
+#!/bin/sh
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 14 --transparent 2 --alpha 0 --tint 0x000000 &
+if [ -x /usr/bin/nm-applet ] ; then
+    nm-applet --sm-disable &
+fi
+nemo --no-default-window && xmobar &
 xsetroot -cursor_name left_ptr
+exec xmonad

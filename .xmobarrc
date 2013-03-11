@@ -10,8 +10,10 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run Com "uname" ["-s","-r"] "" 36000
                     , Run Date "%a %b %_d %Y %I:%M:%S %p " "date" 10
                     , Run StdinReader
+                    , Run Com "music-status" [""] "music" 20
+                    , Run Com "amixer" ["| grep -C4 Master | grep Playback | grep -oE 'Mono.*?Playback [0-9]+' | grep -oE '[0-9]+'"] "volume" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | %memory% | %wlan0% } %StdinReader% { <fc=#ee9a00>%date%</fc>| %battery% |  %uname%"
+       , template = "%music% | %cpu% | %memory% | %wlan0% | %battery% } %StdinReader% { %volume% | <fc=#ee9a00>%date%</fc>                                   "
        }

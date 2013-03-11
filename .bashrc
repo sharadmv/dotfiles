@@ -9,7 +9,7 @@ alias tb="tar xjvf"
 alias dw="cd ~/Downloads/"
 alias chrome="google-chrome 2>/dev/null"
 alias emacs="emacs23 -nw"
-alias pdf="acroread"
+alias pdf="evince"
 alias c="fasd_cd -d"
 alias vba="gvba"
 alias rand='xrandr --output CRT1 --primary --output LVDS --off'
@@ -47,6 +47,9 @@ alias SLEEP=sleep
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/home/sharad/workspace/school/162/nachos/bin:$PATH"
+export PATH="/home/sharad/workspace/lib/mips-x86.linux-xgcc:$PATH"
+export ARCHDIR=/home/sharad/workspace/lib/mips-x86.linux-xgcc
 function cinnamon() {
     rm ~/.xinitrc
     startx
@@ -54,5 +57,7 @@ function cinnamon() {
 function xmonad() {
     rm ~/.xinitrc
     ln -s ~/dotfiles/xmonad.rc ~/.xinitrc
+    cd ~
     startx
 }
+alias startx="cd && startx"
