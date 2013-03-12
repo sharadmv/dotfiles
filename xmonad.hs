@@ -2,12 +2,12 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
-import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Prompt
 import XMonad.Prompt.Man
 import XMonad.Prompt.Shell
 import XMonad.Prompt.Ssh
+import XMonad.Hooks.EwmhDesktops
 import System.IO
 import XMonad.Actions.CycleWS
 
@@ -31,15 +31,15 @@ customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders F
       delta = 3/100
 
 main = do
-
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
                         <+> manageHook defaultConfig
         , layoutHook = customLayout
         , modMask = mod4Mask
+        , handleEventHook = fullscreenEventHook
         , logHook = dynamicLogWithPP xmobarPP
-                        { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
+                        { 
+                          ppTitle = xmobarColor "green" "" . shorten 50
                         }
         ,  terminal = "gnome-terminal"
         } `additionalKeys`
