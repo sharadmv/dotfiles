@@ -3,6 +3,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Hooks.SetWMName
 import XMonad.Prompt
 import XMonad.Prompt.Man
 import XMonad.Prompt.Shell
@@ -31,19 +33,24 @@ customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders F
       delta = 3/100
 
 main = do
+    xmproc <- spawnPipe "xmobar"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
                         <+> manageHook defaultConfig
         , layoutHook = customLayout
+        , startupHook = setWMName "LG3D"
         , modMask = mod4Mask
         , handleEventHook = fullscreenEventHook
         , logHook = dynamicLogWithPP xmobarPP
                         { 
-                          ppTitle = xmobarColor "green" "" . shorten 50
-                        }
+                          ppOutput = hPutStrLn xmproc
+                        , ppTitle = xmobarColor "green" "" . shorten 50 }
         ,  terminal = "gnome-terminal"
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+        , ((controlMask, xK_Left), spawn "music prev")
+        , ((controlMask, xK_Right), spawn "music next")
+        , ((controlMask .|. shiftMask, xK_space), spawn "music toggle")
         , ((mod4Mask, xK_r), shellPrompt defaultXPConfig) --man prompt
         , ((mod4Mask, xK_s), sshPrompt defaultXPConfig) --man prompt
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")

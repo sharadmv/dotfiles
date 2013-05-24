@@ -1,0 +1,31 @@
+#!/bin/bash
+args=`getopt abc:d $*`
+set -- $args
+for i
+do
+    if [[ $i == "pause" ]];
+    then
+        echo "Pausing"
+        nuvolaplayer-client $i
+    fi
+    if [[ $i == "play" ]];
+    then
+        echo "Playing"
+        nuvolaplayer-client $i
+    fi
+    if [[ $i == "toggle" ]];
+    then
+        echo "Toggling"
+        nuvolaplayer-client $i
+    fi
+    if [[ $i == "next" ]];
+    then
+        echo "Next"
+        nuvolaplayer-client $i
+    fi
+    if [[ $i == "prev" ]];
+    then
+        echo "Previous"
+        nuvolaplayer-client $i
+    fi
+done

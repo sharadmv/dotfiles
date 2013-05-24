@@ -3,6 +3,5 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true --expa
 if [ -x /usr/bin/nm-applet ] ; then
     nm-applet --sm-disable &
 fi
-nemo --no-default-window && xmobar &
 xsetroot -cursor_name left_ptr
 exec xmonad

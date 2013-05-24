@@ -35,8 +35,8 @@ function hack ()
 {
   cd ~/workspace/hacks/$1
 }
-PATH=$PATH:$HOME/.cabal/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.cabal/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/scripts
 alias settings='gnome-control-center'
 eval "$(fasd --init auto)"
 alias v='f -e vim'
@@ -45,10 +45,14 @@ alias v='f -e vim'
 alias sl="sl -Fa"
 alias SLEEP=sleep
 
+export JAVA_HOME=/usr/lib/jvm/default-java
+export ANDROID_SDK=${HOME}/adt/sdk
+export ANDROID_NDK=${HOME}/adt/ndk
+export ANDROID_HOME=$ANDROID_SDK
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/home/sharad/workspace/school/162/nachos/bin:$PATH"
-export PATH="/home/sharad/workspace/lib/mips-x86.linux-xgcc:$PATH"
+export PATH="/home/sharadmv/lib/idea/bin:$PATH"
+export PATH=$PATH:$JAVA_HOME/bin:$ANDROID_SDK/tools:${ANDROID_SDK}/platform-tools
 export ARCHDIR=/home/sharad/workspace/lib/mips-x86.linux-xgcc
 function cinnamon() {
     rm ~/.xinitrc
