@@ -3,6 +3,10 @@ args=`getopt abc:d $*`
 set -- $args
 for i
 do
+    if [[ $i == "status" ]];
+    then
+        echo "`nuvolaplayer-client status | grep Song: | sed -e 's/Song: //g'` - `nuvolaplayer-client status | grep Artist: | sed -e 's/Artist: //g'`"
+    fi
     if [[ $i == "pause" ]];
     then
         echo "Pausing"

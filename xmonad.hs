@@ -38,9 +38,9 @@ main = do
         { manageHook = manageDocks <+> myManageHook -- make sure to include myManageHook definition from above
                         <+> manageHook defaultConfig
         , layoutHook = customLayout
-        , startupHook = setWMName "LG3D"
         , modMask = mod4Mask
         , handleEventHook = fullscreenEventHook
+        , startupHook = setWMName "LG3D"
         , logHook = dynamicLogWithPP xmobarPP
                         { 
                           ppOutput = hPutStrLn xmproc

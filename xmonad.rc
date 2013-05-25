@@ -4,4 +4,5 @@ if [ -x /usr/bin/nm-applet ] ; then
     nm-applet --sm-disable &
 fi
 xsetroot -cursor_name left_ptr
+xscreensaver -no-splash &
 exec xmonad

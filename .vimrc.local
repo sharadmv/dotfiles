@@ -1,4 +1,5 @@
 colorscheme molokai
+execute pathogen#infect()
 nnoremap <Tab> :bnext<CR>
 set nospell
 let g:pymode_lint_write = 0
