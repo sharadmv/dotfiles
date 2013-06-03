@@ -1,1 +1,21 @@
-alias qb="ssh -i ~/.pem/sharadmv.pem ec2-user@23.23.188.247"
+#!/bin/bash
+alias l="ls"
+alias ll="ls -la"
+alias la="ls -a"
+alias t="tar"
+alias tv="tar xzvf"
+alias tb="tar xjvf"
+alias dw="cd ~/Downloads/"
+alias chrome="google-chrome 2>/dev/null"
+alias emacs="emacs23 -nw"
+alias pdf="evince"
+alias c="fasd_cd -d"
+alias vba="gvba"
+alias rand='xrandr --output CRT1 --primary --output LVDS --off'
+alias gr="go run"
+alias gc="go build"
+alias settings='gnome-control-center'
+alias v='f -e vim'
+alias sl="sl -Fa"
+alias SLEEP=sleep
+alias tm="tmux"

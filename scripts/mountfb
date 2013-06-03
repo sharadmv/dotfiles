@@ -1,1 +1,2 @@
+#!/bin/bash
 sudo mount -t ecryptfs /home/sharadmv/.crypto /home/sharadmv/.crypto

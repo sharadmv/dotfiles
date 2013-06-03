@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
@@ -16,6 +17,7 @@ import XMonad.Actions.CycleWS
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Wine" --> doCenterFloat
     ]
  
 customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders Full  
