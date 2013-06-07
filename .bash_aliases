@@ -19,3 +19,4 @@ alias v='f -e vim'
 alias sl="sl -Fa"
 alias SLEEP=sleep
 alias tm="tmux"
+alias sb="ssh devrs041.prn2.facebook.com"

@@ -50,9 +50,11 @@ main = do
         ,  terminal = "gnome-terminal"
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
-        , ((controlMask, xK_Left), spawn "music prev")
-        , ((controlMask, xK_Right), spawn "music next")
+        , ((controlMask .|. shiftMask, xK_Left), spawn "music prev")
+        , ((controlMask .|. shiftMask, xK_Right), spawn "music next")
         , ((controlMask .|. shiftMask, xK_space), spawn "music toggle")
+        , ((controlMask .|. shiftMask, xK_Up), spawn "music volup")
+        , ((controlMask .|. shiftMask, xK_Down), spawn "music voldown")
         , ((mod4Mask, xK_r), shellPrompt defaultXPConfig) --man prompt
         , ((mod4Mask, xK_s), sshPrompt defaultXPConfig) --man prompt
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")

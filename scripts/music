@@ -32,4 +32,14 @@ do
         echo "Previous"
         nuvolaplayer-client $i
     fi
+    if [[ $i == "volup" ]];
+    then
+        echo "Volume Up"
+        amixer --quiet set Master 2+
+    fi
+    if [[ $i == "voldown" ]];
+    then
+        echo "Volume Down"
+        amixer --quiet set Master 2-
+    fi
 done
