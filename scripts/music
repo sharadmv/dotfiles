@@ -5,7 +5,13 @@ for i
 do
     if [[ $i == "status" ]];
     then
-        echo "`nuvolaplayer-client status | grep Song: | sed -e 's/Song: //g'` - `nuvolaplayer-client status | grep Artist: | sed -e 's/Artist: //g'`"
+
+        message="`nuvolaplayer-client status | grep Song: | sed -e 's/Song: //g'` - `nuvolaplayer-client status | grep Artist: | sed -e 's/Artist: //g'`"
+        if [[ $message = '(null) - '  || "$(echo $message | tr -d ' ')" = '-' ]]; then
+            echo "No song playing"
+        else
+            echo $message
+        fi
     fi
     if [[ $i == "pause" ]];
     then

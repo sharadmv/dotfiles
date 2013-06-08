@@ -1,1 +1,0 @@
-echo "`nuvolaplayer-client status | grep Song: | sed -e 's/Song: //g'` - `nuvolaplayer-client status | grep Artist: | sed -e 's/Artist: //g'`"

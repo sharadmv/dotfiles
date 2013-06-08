@@ -1,5 +1,4 @@
 #!/bin/sh
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 14 --transparent 2 --alpha 0 --tint 0x000000 &
 wicd-client --tray &
 xsetroot -cursor_name left_ptr
 gnome-settings-daemon &

@@ -1,0 +1,14 @@
+# conkyrc file for dzen
+###
+
+background no
+out_to_console yes
+out_to_x no
+override_utf8_locale yes
+update_interval 1
+total_run_times 0
+mpd_host 192.168.0.5
+mpd_port 6600
+
+TEXT
+^fg(\#ebac54)  ^i(/home/sharadmv/.xmonad/dzen2/mpd.xbm) ^fg(\#ffffff) ${exec music status} ^fg(\#ebac54)^i(/home/sharadmv/.xmonad/dzen2/cpu.xbm) ^fg(\#FFFFFF)${cpu}% ^i(/home/sharadmv/.xmonad/dzen2/mem.xbm) ^fg(\#FFFFFF)${memperc}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/volume.xbm) ^fg(\#00ffff)${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/clock.xbm) ${time %a %b %d %H:%M:%S}  
