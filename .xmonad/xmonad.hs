@@ -27,6 +27,7 @@ import qualified XMonad.StackSet as W
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Netflix-desktop" --> doFloat
     , className =? "Wine" --> doCenterFloat
     ]
  
@@ -87,19 +88,18 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         , ((controlMask .|. shiftMask, xK_space     ), spawn "music toggle")
         , ((controlMask .|. shiftMask, xK_Up        ), spawn "music volup")
         , ((controlMask .|. shiftMask, xK_Down      ), spawn "music voldown")
-        , ((0, 0x1008ff11), spawn "amixer set Master 2-")
-        , ((0, 0x1008ff13), spawn "amixer set Master 2+")
+        , ((0, 0x1008ff11), spawn "music volup")
+        , ((0, 0x1008ff13), spawn "music voldown")
         , ((0, 0x1008ff12), spawn "amixer set Master toggle")
         --Prompts
-        , ((modMask .|. shiftMask, xK_z             ), spawn "xscreensaver-command -lock")
         , ((modMask, xK_r                           ), shellPrompt greenXPConfig) --man prompt
         , ((modMask, xK_s                           ), selectSearchBrowser "chrome" google) --man prompt
         , ((modMask, xK_g                           ), promptSearchBrowser greenXPConfig "chrome" google) --man prompt
         --Layout control
-        , ((modMask .|. shiftMask,      xK_l             ), nextWS)
-        , ((modMask .|. shiftMask,      xK_h             ), prevWS)
-        , ((modMask .|. shiftMask,      xK_Up            ), shiftToPrev)
-        , ((modMask,                    xK_Right         ), nextScreen)
+        , ((modMask .|. shiftMask,      xK_l        ), nextWS)
+        , ((modMask .|. shiftMask,      xK_h        ), prevWS)
+        , ((modMask .|. shiftMask,      xK_Up       ), shiftToPrev)
+        , ((modMask,                    xK_Right    ), nextScreen)
         , ((modMask,                    xK_Left     ), prevScreen)
         , ((modMask,                    xK_d        ), date)
         , ((modMask .|. shiftMask,      xK_Right    ), shiftNextScreen)
@@ -121,9 +121,11 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         , ((modMask,                    xK_l        ), sendMessage Expand)                          -- %! Expand a master area
         , ((modMask,                    xK_comma    ), sendMessage (IncMasterN 1))
         , ((modMask,                    xK_period   ), sendMessage (IncMasterN (-1)))
+        --Commands
         , ((modMask,                    xK_q        ), spawn "killall conky dzen2 && /home/sharadmv/.cabal/bin/xmonad --recompile && /home/sharadmv/.cabal/bin/xmonad --restart")
         , ((modMask .|. shiftMask,      xK_c        ), kill)
         , ((modMask .|. shiftMask,      xK_q        ), io (exitWith ExitSuccess))
+        , ((modMask .|. shiftMask, xK_z             ), spawn "xscreensaver-command -lock")
         --Screenshot
         , ((controlMask, xK_Print                   ), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print                             ), spawn "scrot")
@@ -153,6 +155,6 @@ main = do
         , handleEventHook = fullscreenEventHook
         , startupHook = setWMName "LG3D"
         , logHook = myLogHook dLeft >> fadeInactiveLogHook 0xdddddddd
-        ,  terminal = "terminator"
+        , terminal = "terminator"
         } 
 
