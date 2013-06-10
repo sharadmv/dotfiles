@@ -42,7 +42,7 @@ customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders F
       delta = 3/100
 
 
-myXmonadBar = "sleep 0.1; dzen2 -x '0' -h '16' -w '500' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E'"
+myXmonadBar = "sleep 0.1; dzen2 -x '0' -h '16' -w '450' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E'"
 myStatusBar = "conky -c /home/sharadmv/.xmonad/.conky_dzen | dzen2 -h '16' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -ta center"
 myTrayer = "killall trayer; trayer --edge top --align right --widthtype request --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1B1D1E --expand true --heighttype pixel --height 16"
 myBitmapsDir = "/home/sharadmv/.xmonad/dzen2"
