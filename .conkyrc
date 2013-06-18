@@ -1,6 +1,3 @@
-# conkyrc file for dzen
-###
-
 background no
 out_to_console yes
 out_to_x no
@@ -11,4 +8,4 @@ mpd_host 192.168.0.5
 mpd_port 6600
 
 TEXT
-^fg(\#ebac54)  ^i(/home/sharadmv/.xmonad/dzen2/mpd.xbm) ^fg(\#ffffff) ${exec music status} ^fg(\#ebac54)^i(/home/sharadmv/.xmonad/dzen2/cpu.xbm) ^fg(\#FFFFFF)${cpu}% ^i(/home/sharadmv/.xmonad/dzen2/mem.xbm) ^fg(\#FFFFFF)${memperc}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/volume.xbm) ^fg(\#00ffff)${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/battery.xbm) ^fg(\#00ffff)${exec battery percentage} ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/clock.xbm) ^fg(\#ffffff) ${time %a %b %d %H:%M:%S}  
+^fg(\#ebac54)  ^i(/home/sharadmv/.xmonad/dzen2/mpd.xbm) ^fg(\#ffffff) ${exec music status} ^fg(\#ebac54)^i(/home/sharadmv/.xmonad/dzen2/cpu.xbm) ^fg(\#FFFFFF)${cpu}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/mem.xbm) ^fg(\#FFFFFF)${memperc}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/volume.xbm) ^fg(\#00ffff)${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/battery.xbm) ^fg(\#00ffff)${exec battery percentage} ^fg(\#ebac54) ^i(/home/sharadmv/.xmonad/dzen2/clock.xbm) ^fg(\#ffffff) ${time %a %b %d %H:%M:%S}  

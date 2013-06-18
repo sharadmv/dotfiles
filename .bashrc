@@ -3,18 +3,11 @@ export EDITOR=vim
 . ~/.bash_aliases
 eval "$(fasd --init auto)"
 
-export PATH=$PATH:/home/sharad/.lib/arduino-1.0.1
-export PATH=$PATH:/home/sharad/.lib/eclipse
-export PATH=$PATH:/home/sharad/.lib/scala-2.9.2/bin
-export PATH=$PATH:/home/sharad/.lib/go/bin
-export PATH=$PATH:/home/sharad/.lib/mars
-export PATH=$PATH:/home/sharad/.lib/pokemon-online
-export PATH=$PATH:/home/sharad/.lib/logisim
-export PATH=$PATH:/home/sharad/.lib/ndk
 export PATH=$PATH:/home/sharad/android-sdks/platform-tools/
 export PATH=$PATH:/home/sharad/android-sdks/tools/
 export PATH=$PATH:$HOME/.cabal/bin 
 export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:$HOME/lib/ec2-api-tools/bin
 
 export PATH="/home/sharadmv/lib/idea/bin:$PATH"
 
@@ -48,3 +41,6 @@ function xmonad() {
     cd ~
     startx
 }
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

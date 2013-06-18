@@ -48,4 +48,9 @@ do
         echo "Volume Down"
         amixer --quiet set Master 2-
     fi
+    if [[ $i == "voltoggle" ]];
+    then
+        echo "Volume Toggle"
+        volume-toggle
+    fi
 done

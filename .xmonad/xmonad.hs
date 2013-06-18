@@ -43,9 +43,9 @@ customLayout = avoidStruts $ smartBorders tiled ||| Mirror tiled ||| noBorders F
       delta = 3/100
 
 
-myXmonadBar = "sleep 0.1; dzen2 -x '0' -h '16' -w '450' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E'"
-myStatusBar = "conky -c /home/sharadmv/dotfiles/.conkyrc | dzen2 -h '16' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -ta center"
-myTrayer = "killall trayer; trayer --edge top --align right --widthtype request --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1B1D1E --expand true --heighttype pixel --height 16"
+myXmonadBar = "sleep 0.1; dzen2 -xs 1 -x '0' -h '16' -w '450' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E'"
+myStatusBar = "conky -c /home/sharadmv/dotfiles/.conkyrc | dzen2 -xs 1 -h '16' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -ta center"
+myTrayer = "killall trayer; trayer --edge top --align right --monitor 0 --widthtype request --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1B1D1E --expand true --heighttype pixel --height 16"
 myBitmapsDir = "/home/sharadmv/.xmonad/dzen2"
 
 --Bar
@@ -88,9 +88,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         , ((controlMask .|. shiftMask, xK_space     ), spawn "music toggle")
         , ((controlMask .|. shiftMask, xK_Up        ), spawn "music volup")
         , ((controlMask .|. shiftMask, xK_Down      ), spawn "music voldown")
-        , ((0, 0x1008ff11), spawn "music volup")
-        , ((0, 0x1008ff13), spawn "music voldown")
-        , ((0, 0x1008ff12), spawn "amixer set Master toggle")
+        , ((0, 0x1008ff11), spawn "music voldown")
+        , ((0, 0x1008ff13), spawn "music volup")
+        , ((0, 0x1008ff12), spawn "music voltoggle")
         --Prompts
         , ((modMask, xK_r                           ), shellPrompt greenXPConfig) --man prompt
         , ((modMask, xK_s                           ), selectSearchBrowser "chrome" google) --man prompt
@@ -138,7 +138,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
             , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
         ++
         [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e] [1, 0]
+        | (key, sc) <- zip [xK_e, xK_w] [1, 0]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 main = do
