@@ -10,6 +10,13 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/lib/ec2-api-tools/bin
 
 export PATH="/home/sharadmv/lib/idea/bin:$PATH"
+export PATH="/home/sharadmv/lib/scala/bin:$PATH"
+export PATH="/home/sharadmv/lib/shark/bin:$PATH"
+export GOROOT=$HOME/lib/go
+export PATH=$PATH:$GOROOT/bin
+
+export HIVE_HOME="/home/sharadmv/lib/hive/"
+export SCALA_HOME="/home/sharadmv/lib/shark"
 
 export JAVA_HOME=/usr/lib/jvm/default-java
 export ANDROID_SDK=${HOME}/adt/sdk

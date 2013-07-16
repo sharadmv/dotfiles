@@ -20,3 +20,5 @@ alias sl="sl -Fa"
 alias SLEEP=sleep
 alias tm="tmux"
 alias sb="ssh devrs041.prn2.facebook.com"
+alias sbp="ssh dev1791.prn2.facebook.com"
+alias redshift="redshift -l 37.4225:-122.1423"
