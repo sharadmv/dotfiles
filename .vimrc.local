@@ -1,4 +1,4 @@
-colorscheme black_angus
+colorscheme molokai
 nnoremap <Tab> :bnext<CR>
 set nospell
 let g:pymode_lint_write = 0
