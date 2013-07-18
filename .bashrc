@@ -1,6 +1,5 @@
 export EDITOR=vim
 
-. ~/.bash_aliases
 eval "$(fasd --init auto)"
 
 export PATH=$PATH:/home/sharad/android-sdks/platform-tools/
@@ -12,6 +11,7 @@ export PATH=$PATH:$HOME/lib/ec2-api-tools/bin
 export PATH="/home/sharadmv/lib/idea/bin:$PATH"
 export PATH="/home/sharadmv/lib/scala/bin:$PATH"
 export PATH="/home/sharadmv/lib/shark/bin:$PATH"
+export PATH="/usr/bin/sphinx/bin:$PATH"
 export GOROOT=$HOME/lib/go
 export PATH=$PATH:$GOROOT/bin
 
@@ -51,3 +51,5 @@ function xmonad() {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+. ~/.bash_aliases

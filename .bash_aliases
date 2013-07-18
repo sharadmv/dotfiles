@@ -1,5 +1,6 @@
 #!/bin/bash
-alias l="ls"
+alias ls="ls -F --color"
+alias l="ls --color"
 alias ll="ls -la"
 alias la="ls -a"
 alias t="tar"
