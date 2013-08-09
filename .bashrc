@@ -53,3 +53,7 @@ function xmonad() {
 export PATH="/usr/local/heroku/bin:$PATH"
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 . ~/.bash_aliases
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source /home/sharadmv/.rvm/scripts/rvm
+export TERM=xterm-256color
