@@ -1,7 +1,0 @@
-#!/bin/sh
-wicd-client --tray &
-xsetroot -cursor_name left_ptr
-gnome-settings-daemon &
-xscreensaver -no-splash &
-nemo --no-default-window &
-exec xmonad

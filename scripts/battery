@@ -1,9 +1,0 @@
-#!/bin/bash
-args=`getopt abc:d $*`
-set -- $args
-for i
-do
-    if [[ $i == "percentage" ]]; then
-        echo $(acpitool -b | grep -oE '[0-9]+\.[0-9]+%')
-    fi
-done
