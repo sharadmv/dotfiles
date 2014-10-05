@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/redshiftr -l 37.4225:-122.1423

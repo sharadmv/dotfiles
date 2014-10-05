@@ -1,1 +1,19 @@
-dotfiles/.xmobarrc
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run Network "wlan0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Battery ["-t","<left>","-L","25","-H","75","--low","#FF0000","--normal","#F9FF00","--high","#00FF00"] 600
+                    , Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "%a %b %_d %Y %I:%M:%S %p " "date" 10
+                    , Run StdinReader
+                    , Run Com "music status" [""] "music" 20
+                    , Run Com "amixer" ["| grep -C4 Master | grep Playback | grep -oE 'Mono.*?Playback [0-9]+' | grep -oE '[0-9]+'"] "volume" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%music% | %cpu% | %memory% | %wlan0% | %battery% } %StdinReader% { %volume% | <fc=#ee9a00>%date%</fc>                                   "
+       }

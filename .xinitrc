@@ -1,1 +1,2 @@
-/home/sharad/dotfiles/xmonad.rc
+exec xmonad | xmobar
+
