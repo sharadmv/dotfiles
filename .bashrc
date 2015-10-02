@@ -32,24 +32,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export GOROOT=~/.lib/go
 
-function work () 
-{
-  cd ~/workspace/$1
-}
-function hack () 
-{
-  cd ~/workspace/hacks/$1
-}
-
-function cinnamon() {
-    rm ~/.xinitrc
-    startx
-}
-function xmonad() {
-    rm ~/.xinitrc
-    ln -s ~/dotfiles/xmonad.rc ~/.xinitrc
-    cd ~
-    startx
+vimswap () {
+    rm ~/.vimswap/*
 }
 
 ### Added by the Heroku Toolbelt
@@ -58,8 +42,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PYTHONPATH="/home/sharad/lib/google_appengine/:$PYTHONPATH"
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 source ~/.bash_aliases
-source ~/.bash_git
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TERM=xterm-256color
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
