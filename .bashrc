@@ -58,8 +58,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PYTHONPATH="/home/sharad/lib/google_appengine/:$PYTHONPATH"
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 source ~/.bash_aliases
-source ~/.bash_git
+#source ~/.bash_git
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TERM=xterm-256color
 source /usr/local/bin/virtualenvwrapper.sh
+export PATH=$PATH:/home/local/ANT/sharadv/lib/mendeleydesktop/bin/
