@@ -12,6 +12,7 @@ ln -sfv "$DOTFILES_DIR/bash/bashrc" ~/.bashrc.local
 ln -sfv "$DOTFILES_DIR/bash/bash_aliases" ~/.bash_aliases
 ln -sfv "$DOTFILES_DIR/bash/bash_functions" ~/.bash_functions
 ln -sfv "$DOTFILES_DIR/bash/bash_git" ~/.bash_git
+ln -sfv "$DOTFILES_DIR/bash/bash_go" ~/.bash_go
 
 ln -sfv "$DOTFILES_DIR/vim/vimrc.local" ~/.vimrc.local
 ln -sfv "$DOTFILES_DIR/vim/vimrc.bundles.local" ~/.vimrc.bundles.local
