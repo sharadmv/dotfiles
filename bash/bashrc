@@ -8,3 +8,4 @@ export PATH=$PATH:/home/local/ANT/sharadv/lib/mendeleydesktop/bin/
 source ~/.bash_aliases
 source ~/.bash_git
 source ~/.bash_functions
+source ~/.bash_go

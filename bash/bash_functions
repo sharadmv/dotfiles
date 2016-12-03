@@ -1,3 +1,7 @@
+#!/bin/bash
+eval "$(fasd --init auto)"
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Create a new directory and enter it
 
 mk() {
@@ -69,4 +73,12 @@ dataurl() {
     MIMETYPE="${MIMETYPE};charset=utf-8"
   fi
   echo "data:${MIMETYPE};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+}
+
+tsv() {
+  viewtab | less -S
+}
+
+csv() {
+  viewtab -d"," | less -S
 }

@@ -1,2 +1,4 @@
-  Bundle 'lervag/vim-latex'
-  Bundle 'digitaltoad/vim-jade'
+Bundle 'lervag/vim-latex'
+Bundle 'digitaltoad/vim-jade'
+Plugin 'fatih/vim-go'
+Plugin 'tshirtman/vim-cython'
