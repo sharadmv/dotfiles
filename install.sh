@@ -20,3 +20,5 @@ ln -sfv "$DOTFILES_DIR/vim/vimrc.bundles.local" ~/.vimrc.bundles.local
 ln -sfv "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 
 ln -sfv "$DOTFILES_DIR/tmux/tmux.conf" ~/.tmux.conf
+
+vim +PluginInstall +qall
