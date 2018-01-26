@@ -18,3 +18,6 @@ let g:neocomplcache_temporary_dir="$HOME/.vim/tmp/neocomplcache"
 set nospell
 map <F1> <Esc>
 imap <F1> <Esc>
+set expandtab
+set softtabstop=4
+filetype indent on
