@@ -1,8 +1,7 @@
 #!/bin/bash
-eval "$(fasd --init auto)"
-source /usr/local/bin/virtualenvwrapper.sh
-
 # Create a new directory and enter it
+
+eval "$(fasd --init auto)"
 
 mk() {
   mkdir -p "$@" && cd "$@"
