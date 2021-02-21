@@ -3,9 +3,19 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 export PATH=$PATH:$HOME/bin/
 export WORKON_HOME=~/.envs
 export TERM=xterm-256color
-export PATH=$PATH:/home/local/ANT/sharadv/lib/mendeleydesktop/bin/
+source $HOME/.poetry/env
 
 source ~/.bash_aliases
 source ~/.bash_git
 source ~/.bash_functions
 source ~/.bash_go
+
+# added by Anaconda2 installer
+export PATH="/home/sharad/.local/bin/:$PATH"
+export PATH="/home/sharad/.cabal/bin:$PATH"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/sharad/.mujoco/mjpro150/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia-384
+export AWS_REGION=us-west-2
+export S3_ENDPOINT=s3.us-west-2.amazonaws.com
+
+exec fish

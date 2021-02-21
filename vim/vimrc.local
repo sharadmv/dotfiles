@@ -22,3 +22,4 @@ set expandtab
 set softtabstop=4
 filetype indent on
 set clipboard=unnamedplus
+let g:vimtex_compiler_latexmk = {'callback' : 0}

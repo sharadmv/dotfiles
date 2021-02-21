@@ -41,6 +41,7 @@
     default = current
 [diff]
     mnemonicprefix = true
+	tool = vimdiff
 [branch]
     autosetuprebase = always
 [apply]
