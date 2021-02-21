@@ -15,7 +15,6 @@ alias vba="gvba"
 alias rand='xrandr --output CRT1 --primary --output LVDS --off'
 alias gr="go run"
 alias gc="go build"
-alias settings='gnome-control-center'
 alias v='f -e vim'
 alias sl="sl -Fa"
 alias SLEEP=sleep
